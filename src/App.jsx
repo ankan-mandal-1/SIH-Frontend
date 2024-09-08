@@ -17,6 +17,7 @@ import AddProduct from './pages/Admin/AddProduct'
 import Order from './pages/Admin/Order'
 import AdminSingleProduct from './pages/Admin/AdminSingleProduct'
 import SingleOrder from './pages/Admin/SingleOrder'
+import WorkProgress from './pages/WorkProgress/WorkProgress'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/work" element={<WorkProgress />} />
 
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/add-product" element={<AddProduct />} />
