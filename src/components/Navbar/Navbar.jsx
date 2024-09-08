@@ -6,6 +6,10 @@ import { CartContext } from '../../context/CartContext'
 
 const Navbar = () => {
 
+    const {cart: cartItem} = useContext(CartContext)
+
+    console.log(cartItem)
+
   return (
     <div className='navbar'>
         {/* <div className="nav_btn"> */}
@@ -13,7 +17,15 @@ const Navbar = () => {
                 {({isActive}) =>  isActive ? <img src={homeActive} alt="" /> : <img src={home} alt="" />}
             </NavLink>
             <NavLink to="/cart/list">
-                {({isActive}) => isActive ? <img src={cartActive} alt="" /> : <img src={cart} alt="" />}
+                {({isActive}) => isActive ? 
+                <>
+                    {cartItem.length > 0 && <span className='cart_noti'></span>}
+                    <img src={cartActive} alt="" />
+                </>
+                 : <>
+                    {cartItem.length > 0 && <span className='cart_noti'></span>}
+                    <img src={cart} alt="" />
+                    </>}
             </NavLink>
             <NavLink to="/scan">
                 <img src={scan} alt="" />
